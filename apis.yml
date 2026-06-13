@@ -1,0 +1,72 @@
+aid: languagetools
+name: LanguageTool
+description: >-
+  Open-source grammar, style, and spell checking REST API supporting 25+
+  languages with AI-powered error detection, style suggestions, and text
+  improvements. Used by 100+ companies to enhance software with proofreading
+  capabilities via a simple HTTP API returning JSON responses. Hosted on
+  GDPR-compliant servers in Germany with no text storage.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/languagetools/refs/heads/main/apis.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+type: Index
+tags:
+  - Grammar
+  - Spell Check
+  - Style
+  - Proofreading
+  - NLP
+  - Natural Language Processing
+  - Writing
+  - Open Source
+apis:
+  - aid: languagetools:languagetool-api
+    name: LanguageTool Proofreading API
+    description: >-
+      HTTP REST API for grammar, style, and spell checking across 30+ languages.
+      Accepts POST requests with text and language parameters, returning JSON
+      with detected errors, suggestions, and rule matches. Supports up to 60,000
+      characters per request with optional API key authentication for premium
+      tiers.
+    image: >-
+      https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://languagetool.org/http-api/
+    baseURL: https://api.languagetool.org/v2
+    tags:
+      - Grammar
+      - Spell Check
+      - Proofreading
+      - Style
+      - NLP
+    properties:
+      - type: Documentation
+        url: https://languagetool.org/http-api/
+      - type: OpenAPI
+        url: https://api.apis.guru/v2/specs/languagetool.org/1.1.2/openapi.json
+common:
+  - type: Website
+    url: https://languagetool.org
+  - type: Documentation
+    url: https://languagetool.org/http-api/
+  - type: GitHubOrg
+    url: https://github.com/languagetool-org
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/languagetool
+  - type: Blog
+    url: https://languagetool.org/insights/
+  - type: Pricing
+    url: https://languagetool.org/proofreading-api
+  - type: X
+    url: https://x.com/languagetoolorg
+  - type: Plans
+    url: https://raw.githubusercontent.com/api-evangelist/languagetools/refs/heads/main/plans/plans.yml
+  - type: RateLimits
+    url: https://raw.githubusercontent.com/api-evangelist/languagetools/refs/heads/main/rate-limits/rate-limits.yml
+  - type: FinOps
+    url: https://raw.githubusercontent.com/api-evangelist/languagetools/refs/heads/main/finops/finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

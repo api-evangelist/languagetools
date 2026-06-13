@@ -1,0 +1,77 @@
+finops:
+  description: >-
+    LanguageTool offers a tiered API pricing model based on daily call volume.
+    A free public tier is available for development and low-volume use with no
+    API key required. Paid API plans are sold as monthly subscriptions with
+    no long-term commitment. All prices include VAT. Enterprise volumes beyond
+    10,000 calls/day require custom pricing. Self-hosted deployments are
+    available via the open-source LGPL-licensed codebase on GitHub.
+
+  billing:
+    model: subscription
+    cadence: monthly
+    cancellation: monthly
+    vatIncluded: true
+    currency: USD
+    refund: false
+
+  tiers:
+    - name: Free Public API
+      callsPerDay: 0
+      note: No fixed daily call limit by plan; limited by IP-based rate limits
+      pricePerMonth: 0.00
+      charLimitPerRequest: 20480
+      requiresApiKey: false
+
+    - name: API Starter
+      callsPerDay: 100
+      pricePerMonth: null
+      note: Price not publicly disclosed; buy via languagetool.org/proofreading-api
+      charLimitPerRequest: 60000
+      requiresApiKey: true
+
+    - name: API Basic
+      callsPerDay: 250
+      pricePerMonth: 29.00
+      note: Approximate pricing; includes VAT
+      charLimitPerRequest: 60000
+      requiresApiKey: true
+
+    - name: API Professional
+      callsPerDay: 500
+      pricePerMonth: null
+      note: Price not publicly disclosed; buy via languagetool.org/proofreading-api
+      charLimitPerRequest: 60000
+      requiresApiKey: true
+
+    - name: API Business
+      callsPerDay: 1000
+      pricePerMonth: null
+      note: Price not publicly disclosed; buy via languagetool.org/proofreading-api
+      charLimitPerRequest: 60000
+      requiresApiKey: true
+
+    - name: API Enterprise
+      callsPerDay: 10000
+      pricePerMonth: null
+      note: Price not publicly disclosed; custom volumes available beyond 10,000/day
+      charLimitPerRequest: 60000
+      requiresApiKey: true
+
+  selfHosting:
+    available: true
+    license: LGPL-2.1
+    repository: https://github.com/languagetool-org/languagetool
+    note: >-
+      The full LanguageTool source code is open source under LGPL-2.1.
+      Organizations can self-host to avoid per-call API fees. Automated
+      or batch use cases are encouraged to use self-hosted instances
+      rather than the public API.
+
+  costOptimization:
+    - tip: Use self-hosted LanguageTool for high-volume or batch workloads
+      url: https://github.com/languagetool-org/languagetool
+    - tip: Split large documents into chunks under 60,000 characters for paid API
+    - tip: Cache results for repeated identical texts to reduce API call count
+    - tip: Use the free public API for development and testing before upgrading
+    - tip: Select annual billing where available to reduce per-month cost

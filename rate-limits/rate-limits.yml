@@ -1,0 +1,62 @@
+rateLimits:
+  - name: Free Public API - Requests Per Minute
+    description: >-
+      The public LanguageTool API enforces a maximum of 20 requests per IP
+      address per minute. This is a peak value; sustained requests at this
+      rate may result in temporary blocking. Intended for development and
+      interactive use, not automated batch processing.
+    plan: Free Public API
+    url: https://dev.languagetool.org/public-http-api.html
+    limits:
+      - name: Max requests
+        value: 20
+        unit: requests/minute/IP
+      - name: Max text throughput
+        value: 75
+        unit: KB/minute/IP
+      - name: Max request size
+        value: 20
+        unit: KB/request
+
+  - name: Free Public API - Text Size
+    description: >-
+      Individual requests to the public API must not exceed 20KB of text.
+      Only up to 30 misspelled words per request will receive spelling
+      suggestions.
+    plan: Free Public API
+    url: https://dev.languagetool.org/public-http-api.html
+    limits:
+      - name: Max text per request
+        value: 20
+        unit: KB
+      - name: Max misspelling suggestions
+        value: 30
+        unit: words
+
+  - name: Premium/Paid API - Daily Call Quota
+    description: >-
+      Paid API plans enforce a daily API call quota based on the selected
+      tier. Plans range from 100 to 10,000 calls per day. Each call may
+      include up to 60,000 characters of text. Monthly cancellation is
+      available for all plans.
+    plan: API Starter / Basic / Professional / Business / Enterprise
+    url: https://languagetool.org/proofreading-api
+    limits:
+      - name: API calls per day (Starter)
+        value: 100
+        unit: calls/day
+      - name: API calls per day (Basic)
+        value: 250
+        unit: calls/day
+      - name: API calls per day (Professional)
+        value: 500
+        unit: calls/day
+      - name: API calls per day (Business)
+        value: 1000
+        unit: calls/day
+      - name: API calls per day (Enterprise)
+        value: 10000
+        unit: calls/day
+      - name: Max characters per request
+        value: 60000
+        unit: characters/request

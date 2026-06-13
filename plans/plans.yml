@@ -1,0 +1,156 @@
+plans:
+  - name: Free Public API
+    description: >-
+      Free tier access to the LanguageTool public HTTP API for development and
+      low-volume use. No API key required. Subject to shared rate limits.
+    url: https://dev.languagetool.org/public-http-api.html
+    pricing:
+      - price: 0.00
+        unit: month
+        currency: USD
+    limits:
+      - name: Requests per minute
+        value: 20
+        unit: requests/minute/IP
+      - name: Text per minute
+        value: 75
+        unit: KB/minute/IP
+      - name: Max text per request
+        value: 20
+        unit: KB
+      - name: Misspelling suggestions
+        value: 30
+        unit: words
+    features:
+      - Grammar and spell checking
+      - 30+ language support
+      - JSON response format
+      - No API key required
+
+  - name: API Starter
+    description: >-
+      Entry-level paid API plan for developers and small applications needing
+      reliable daily API call quotas with premium features including 60,000
+      character limit per request.
+    url: https://languagetool.org/proofreading-api
+    pricing:
+      - price: 0.00
+        unit: month
+        currency: USD
+        note: Price not publicly listed; requires signup for quote
+    limits:
+      - name: API calls per day
+        value: 100
+        unit: calls/day
+      - name: Max characters per request
+        value: 60000
+        unit: characters
+    features:
+      - Grammar, style, and spell checking
+      - 30+ language support
+      - Personal Dictionary access
+      - GDPR-compliant Germany servers
+      - No text storage
+      - Monthly cancellation
+
+  - name: API Basic
+    description: >-
+      Mid-tier API plan for small to medium applications requiring up to 250
+      API calls per day with full premium feature access.
+    url: https://languagetool.org/proofreading-api
+    pricing:
+      - price: 29.00
+        unit: month
+        currency: USD
+        note: Approximate; includes VAT
+    limits:
+      - name: API calls per day
+        value: 250
+        unit: calls/day
+      - name: Max characters per request
+        value: 60000
+        unit: characters
+    features:
+      - Grammar, style, and spell checking
+      - 30+ language support
+      - Personal Dictionary access
+      - GDPR-compliant Germany servers
+      - No text storage
+      - Monthly cancellation
+
+  - name: API Professional
+    description: >-
+      Professional API plan for growing applications needing up to 500 API
+      calls per day.
+    url: https://languagetool.org/proofreading-api
+    pricing:
+      - price: 0.00
+        unit: month
+        currency: USD
+        note: Price not publicly listed; requires signup for quote
+    limits:
+      - name: API calls per day
+        value: 500
+        unit: calls/day
+      - name: Max characters per request
+        value: 60000
+        unit: characters
+    features:
+      - Grammar, style, and spell checking
+      - 30+ language support
+      - Personal Dictionary access
+      - GDPR-compliant Germany servers
+      - No text storage
+      - Monthly cancellation
+
+  - name: API Business
+    description: >-
+      Business API plan for applications requiring up to 1,000 API calls per
+      day with full feature access.
+    url: https://languagetool.org/proofreading-api
+    pricing:
+      - price: 0.00
+        unit: month
+        currency: USD
+        note: Price not publicly listed; requires signup for quote
+    limits:
+      - name: API calls per day
+        value: 1000
+        unit: calls/day
+      - name: Max characters per request
+        value: 60000
+        unit: characters
+    features:
+      - Grammar, style, and spell checking
+      - 30+ language support
+      - Personal Dictionary access
+      - GDPR-compliant Germany servers
+      - No text storage
+      - Monthly cancellation
+
+  - name: API Enterprise
+    description: >-
+      Enterprise API plan for high-volume applications requiring up to 10,000
+      API calls per day or custom volumes. Contact LanguageTool for custom
+      enterprise pricing beyond 10,000 calls/day.
+    url: https://languagetool.org/proofreading-api
+    pricing:
+      - price: 0.00
+        unit: month
+        currency: USD
+        note: Price not publicly listed; requires signup for quote
+    limits:
+      - name: API calls per day
+        value: 10000
+        unit: calls/day
+      - name: Max characters per request
+        value: 60000
+        unit: characters
+    features:
+      - Grammar, style, and spell checking
+      - 30+ language support
+      - Personal Dictionary access
+      - GDPR-compliant Germany servers
+      - No text storage
+      - Monthly cancellation
+      - Custom volumes available
