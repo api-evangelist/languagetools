@@ -1,0 +1,52 @@
+[
+  {
+    "name": "English (US)",
+    "code": "en",
+    "longCode": "en-US"
+  },
+  {
+    "name": "English (GB)",
+    "code": "en",
+    "longCode": "en-GB"
+  },
+  {
+    "name": "German",
+    "code": "de",
+    "longCode": "de-DE"
+  },
+  {
+    "name": "German (Austria)",
+    "code": "de",
+    "longCode": "de-AT"
+  },
+  {
+    "name": "French",
+    "code": "fr",
+    "longCode": "fr"
+  },
+  {
+    "name": "Spanish",
+    "code": "es",
+    "longCode": "es"
+  },
+  {
+    "name": "Portuguese (Brazil)",
+    "code": "pt",
+    "longCode": "pt-BR"
+  },
+  {
+    "name": "Italian",
+    "code": "it",
+    "longCode": "it"
+  },
+  {
+    "name": "Dutch",
+    "code": "nl",
+    "longCode": "nl"
+  },
+  {
+    "name": "Polish",
+    "code": "pl",
+    "longCode": "pl-PL"
+  }
+]

@@ -1,0 +1,152 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "api": "https://schema.org/WebAPI",
+    "entryPoint": "https://schema.org/EntryPoint",
+    "languagetool": "https://languagetool.org/"
+  },
+  "@type": "WebAPI",
+  "@id": "https://languagetool.org/http-api/",
+  "name": "LanguageTool Proofreading API",
+  "description": "HTTP REST API for grammar, style, and spell checking across 30+ languages. Accepts POST requests with text and language parameters, returning JSON with detected errors, suggestions, and rule matches.",
+  "url": "https://languagetool.org/http-api/",
+  "termsOfService": "https://languagetool.org/legal/",
+  "provider": {
+    "@type": "Organization",
+    "name": "LanguageTool",
+    "url": "https://languagetool.org",
+    "sameAs": [
+      "https://github.com/languagetool-org",
+      "https://www.linkedin.com/company/languagetool",
+      "https://x.com/languagetoolorg"
+    ]
+  },
+  "documentation": "https://languagetool.org/http-api/",
+  "softwareVersion": "1.1.2",
+  "availableLanguage": [
+    "English",
+    "German",
+    "French",
+    "Spanish",
+    "Italian",
+    "Dutch",
+    "Polish",
+    "Portuguese"
+  ],
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Free Plan",
+      "description": "Free API access with usage limits",
+      "price": "0",
+      "priceCurrency": "USD",
+      "eligibleQuantity": {
+        "@type": "QuantitativeValue",
+        "name": "characters per request",
+        "value": 20000
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Premium Plan",
+      "description": "Premium API access with higher rate limits and character limits",
+      "url": "https://languagetool.org/proofreading-api",
+      "eligibleQuantity": {
+        "@type": "QuantitativeValue",
+        "name": "characters per request",
+        "value": 60000
+      }
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "LanguageTool API Endpoints",
+    "itemListElement": [
+      {
+        "@type": "EntryPoint",
+        "name": "Check Text",
+        "description": "The main feature - check a text with LanguageTool for possible style and grammar issues.",
+        "urlTemplate": "https://api.languagetoolplus.com/v2/check",
+        "httpMethod": "POST",
+        "encodingType": "application/x-www-form-urlencoded",
+        "contentType": "application/json"
+      },
+      {
+        "@type": "EntryPoint",
+        "name": "List Languages",
+        "description": "Get a list of supported languages.",
+        "urlTemplate": "https://api.languagetoolplus.com/v2/languages",
+        "httpMethod": "GET",
+        "contentType": "application/json"
+      },
+      {
+        "@type": "EntryPoint",
+        "name": "List Dictionary Words",
+        "description": "List words in the user's personal dictionaries.",
+        "urlTemplate": "https://api.languagetoolplus.com/v2/words",
+        "httpMethod": "GET",
+        "contentType": "application/json"
+      },
+      {
+        "@type": "EntryPoint",
+        "name": "Add Dictionary Word",
+        "description": "Add a word to one of the user's personal dictionaries.",
+        "urlTemplate": "https://api.languagetoolplus.com/v2/words/add",
+        "httpMethod": "POST",
+        "encodingType": "application/x-www-form-urlencoded",
+        "contentType": "application/json"
+      },
+      {
+        "@type": "EntryPoint",
+        "name": "Delete Dictionary Word",
+        "description": "Remove a word from one of the user's personal dictionaries.",
+        "urlTemplate": "https://api.languagetoolplus.com/v2/words/delete",
+        "httpMethod": "POST",
+        "encodingType": "application/x-www-form-urlencoded",
+        "contentType": "application/json"
+      }
+    ]
+  },
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "baseURL",
+      "value": "https://api.languagetoolplus.com/v2"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "openAPISpec",
+      "value": "https://api.apis.guru/v2/specs/languagetool.org/1.1.2/swagger.json"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "dataHostingLocation",
+      "value": "Germany"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "gdprCompliant",
+      "value": "true"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "textStoragePolicy",
+      "value": "No text storage"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "freeRequestRateLimit",
+      "value": "20 requests per minute"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "premiumRequestRateLimit",
+      "value": "80 requests per minute"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "supportedLanguages",
+      "value": "25+"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "title": "LanguageTool API Vocabulary",
+  "description": "Key terms and concepts used in the LanguageTool Proofreading API",
+  "terms": [
+    {
+      "term": "match",
+      "definition": "An identified grammar, style, or spelling issue in the submitted text. Each match contains the error location, message, suggestions, and the rule that triggered it.",
+      "related": ["rule", "replacement", "context", "offset"]
+    },
+    {
+      "term": "rule",
+      "definition": "A LanguageTool rule that defines a specific grammar, style, or spelling pattern to check. Rules have unique IDs per language and belong to categories.",
+      "related": ["category", "issueType", "enabledRules", "disabledRules"]
+    },
+    {
+      "term": "category",
+      "definition": "A grouping of related rules. Examples include GRAMMAR, TYPOS, STYLE, PUNCTUATION. Categories can be enabled or disabled at the API level.",
+      "related": ["rule", "enabledCategories", "disabledCategories"]
+    },
+    {
+      "term": "replacement",
+      "definition": "A suggested correction for an identified error. Multiple replacements may be provided, ordered by confidence. The array can be empty when no suggestion is available.",
+      "related": ["match", "value"]
+    },
+    {
+      "term": "offset",
+      "definition": "The zero-based character position of an error within the text or context string. Used to locate and highlight errors in the original input.",
+      "related": ["length", "context", "match"]
+    },
+    {
+      "term": "length",
+      "definition": "The number of characters that make up an identified error span, starting at the offset position.",
+      "related": ["offset", "context"]
+    },
+    {
+      "term": "context",
+      "definition": "A snippet of text surrounding an error, including the error itself and adjacent text for display purposes. Has its own offset and length relative to the context string.",
+      "related": ["offset", "length", "match"]
+    },
+    {
+      "term": "language code",
+      "definition": "An IETF BCP 47 language tag used to specify the language for checking. Supports both general codes (e.g., 'en') and region-specific variants (e.g., 'en-US', 'en-GB'). Special value 'auto' triggers automatic language detection.",
+      "related": ["longCode", "preferredVariants", "detectedLanguage"]
+    },
+    {
+      "term": "auto",
+      "definition": "A special value for the language parameter that instructs LanguageTool to automatically detect the language of the submitted text. Use preferredVariants to guide variant selection.",
+      "related": ["language", "preferredVariants", "detectedLanguage"]
+    },
+    {
+      "term": "preferredVariants",
+      "definition": "A comma-separated list of language variant codes used when language=auto. Guides the language detector to pick specific regional variants like 'en-US' or 'de-AT' when multiple variants of a language exist.",
+      "related": ["language", "auto"]
+    },
+    {
+      "term": "motherTongue",
+      "definition": "A language code representing the user's native language. When set, enables false friends checks for supported language pairs, flagging words that look similar between languages but have different meanings.",
+      "related": ["language"]
+    },
+    {
+      "term": "false friends",
+      "definition": "Words that look similar in two languages but have different meanings. LanguageTool can flag these when the motherTongue parameter is set and a language pair supports this feature.",
+      "related": ["motherTongue"]
+    },
+    {
+      "term": "picky level",
+      "definition": "A checking level that activates additional rules beyond the default set. Suitable for formal or professional text where stricter style adherence is desired.",
+      "related": ["level", "rule"]
+    },
+    {
+      "term": "issueType",
+      "definition": "A classification of the rule's error type based on the W3C Localization Quality Issue (LQI) type vocabulary. Examples include 'grammar', 'misspelling', 'style', 'typographical'. Not defined for all languages.",
+      "related": ["rule"]
+    },
+    {
+      "term": "personal dictionary",
+      "definition": "A user-specific list of words that LanguageTool will not flag as misspellings. Managed via the /words, /words/add, and /words/delete endpoints. Limited to 500 words per dictionary.",
+      "related": ["words", "dict"]
+    },
+    {
+      "term": "dict",
+      "definition": "A named personal dictionary. Users can have multiple named dictionaries and specify which ones to use per request. Non-existent dictionaries are created automatically when a word is added.",
+      "related": ["personal dictionary", "dicts"]
+    },
+    {
+      "term": "Premium",
+      "definition": "A paid tier of the LanguageTool API that offers higher rate limits (80 req/min vs 20), more characters per minute (300,000 vs 75,000), and more characters per request (60,000 vs 20,000). Enabled by providing username and apiKey.",
+      "related": ["apiKey", "username", "rate limits"]
+    },
+    {
+      "term": "apiKey",
+      "definition": "An authentication token used together with a username to access the Premium tier of the LanguageTool API. Obtained from the user's LanguageTool account settings.",
+      "related": ["username", "Premium"]
+    },
+    {
+      "term": "annotation",
+      "definition": "A structured format for submitting mixed text and markup via the 'data' parameter. Each annotation element specifies either plain text or markup (HTML, XML, or other markup languages). Markup is ignored during checking.",
+      "related": ["data", "markup", "interpretAs"]
+    },
+    {
+      "term": "interpretAs",
+      "definition": "An optional field within a markup annotation element that specifies how the markup should be treated for layout purposes. For example, <p> can be interpreted as a double newline to avoid cross-paragraph rule errors.",
+      "related": ["annotation", "markup"]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "software": {
+    "name": "LanguageTool",
+    "version": "6.3",
+    "buildDate": "2024-01-15",
+    "apiVersion": 1,
+    "premium": false,
+    "status": ""
+  },
+  "language": {
+    "name": "English (US)",
+    "code": "en-US",
+    "detectedLanguage": {
+      "name": "English (US)",
+      "code": "en-US"
+    }
+  },
+  "matches": [
+    {
+      "message": "Use 'is' instead of 'are' to agree with the subject.",
+      "shortMessage": "Agreement error",
+      "offset": 5,
+      "length": 3,
+      "replacements": [
+        { "value": "is" }
+      ],
+      "context": {
+        "text": "This are a sentence with a grammer error.",
+        "offset": 5,
+        "length": 3
+      },
+      "sentence": "This are a sentence with a grammer error.",
+      "rule": {
+        "id": "THIS_NNS_VBZ",
+        "description": "Subject-verb agreement error",
+        "issueType": "grammar",
+        "category": {
+          "id": "GRAMMAR",
+          "name": "Grammar"
+        }
+      }
+    },
+    {
+      "message": "Possible spelling mistake found: 'grammer'",
+      "shortMessage": "Spelling error",
+      "offset": 27,
+      "length": 7,
+      "replacements": [
+        { "value": "grammar" },
+        { "value": "grammer" }
+      ],
+      "context": {
+        "text": "This are a sentence with a grammer error.",
+        "offset": 27,
+        "length": 7
+      },
+      "sentence": "This are a sentence with a grammer error.",
+      "rule": {
+        "id": "MORFOLOGIK_RULE_EN_US",
+        "description": "Possible spelling mistake",
+        "issueType": "misspelling",
+        "category": {
+          "id": "TYPOS",
+          "name": "Possible Typo"
+        }
+      }
+    }
+  ]
+}
