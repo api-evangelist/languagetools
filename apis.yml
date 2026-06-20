@@ -6,7 +6,7 @@ description: >-
   improvements. Used by 100+ companies to enhance software with proofreading
   capabilities via a simple HTTP API returning JSON responses. Hosted on
   GDPR-compliant servers in Germany with no text storage.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: >-
   https://raw.githubusercontent.com/api-evangelist/languagetools/refs/heads/main/apis.yml
 created: '2026-06-13'
@@ -32,7 +32,7 @@ apis:
       characters per request with optional API key authentication for premium
       tiers.
     image: >-
-      https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+      https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://languagetool.org/http-api/
     baseURL: https://api.languagetool.org/v2
     tags:
