@@ -1,0 +1,31 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: languagetool.org
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 18 05:00:51 2026 GMT
+  hsts: false
+- host: api.languagetool.org
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 26 13:21:47 2026 GMT
+  hsts: null
+- host: api.languagetoolplus.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 26 13:23:51 2026 GMT
+  hsts: null
+domains:
+- domain: languagetool.org
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: false
+- domain: languagetoolplus.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none
