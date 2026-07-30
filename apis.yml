@@ -6,7 +6,19 @@ description: >-
   improvements. Used by 100+ companies to enhance software with proofreading
   capabilities via a simple HTTP API returning JSON responses. Hosted on
   GDPR-compliant servers in Germany with no text storage.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/languagetools.png
 url: >-
   https://raw.githubusercontent.com/api-evangelist/languagetools/refs/heads/main/apis.yml
 created: '2026-06-13'
@@ -23,29 +35,42 @@ tags:
   - Writing
   - Open Source
 apis:
-  - aid: languagetools:languagetool-api
-    name: LanguageTool Proofreading API
-    description: >-
-      HTTP REST API for grammar, style, and spell checking across 30+ languages.
-      Accepts POST requests with text and language parameters, returning JSON
-      with detected errors, suggestions, and rule matches. Supports up to 60,000
-      characters per request with optional API key authentication for premium
-      tiers.
-    image: >-
-      https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://languagetool.org/http-api/
-    baseURL: https://api.languagetool.org/v2
-    tags:
-      - Grammar
-      - Spell Check
-      - Proofreading
-      - Style
-      - NLP
-    properties:
-      - type: Documentation
-        url: https://languagetool.org/http-api/
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/languagetools/main/openapi/openapi.json
+- aid: languagetools:languagetools-check-api
+  name: LanguageTool Check API
+  description: The Check API from LanguageTool — 1 operation(s) for check.
+  humanURL: https://languagetool.org/http-api/
+  baseURL: https://api.languagetool.org/v2
+  tags:
+  - Check
+  properties:
+  - type: OpenAPI
+    url: openapi/languagetools-check-api-openapi.yml
+  - type: Documentation
+    url: https://languagetool.org/http-api/
+- aid: languagetools:languagetools-languages-api
+  name: LanguageTool Languages API
+  description: The Languages API from LanguageTool — 1 operation(s) for languages.
+  humanURL: https://languagetool.org/http-api/
+  baseURL: https://api.languagetool.org/v2
+  tags:
+  - Languages
+  properties:
+  - type: OpenAPI
+    url: openapi/languagetools-languages-api-openapi.yml
+  - type: Documentation
+    url: https://languagetool.org/http-api/
+- aid: languagetools:languagetools-words-api
+  name: LanguageTool Words API
+  description: The Words API from LanguageTool — 3 operation(s) for words.
+  humanURL: https://languagetool.org/http-api/
+  baseURL: https://api.languagetool.org/v2
+  tags:
+  - Words
+  properties:
+  - type: OpenAPI
+    url: openapi/languagetools-words-api-openapi.yml
+  - type: Documentation
+    url: https://languagetool.org/http-api/
 common:
   - type: AgenticAccess
     url: agentic-access/languagetools-agentic-access.yml
