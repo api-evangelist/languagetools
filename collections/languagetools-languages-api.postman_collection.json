@@ -1,0 +1,99 @@
+{
+  "item": [
+    {
+      "id": "dba59102-6968-406b-9ff1-d503211435da",
+      "name": "Languages",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9f393055-a4f1-4574-b362-43ffbdbf71df",
+          "name": "Get a list of supported languages.",
+          "request": {
+            "name": "Get a list of supported languages.",
+            "description": {},
+            "url": {
+              "path": [
+                "languages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c84b75c1-37e6-47fc-bd8c-408f78cbf9a9",
+              "name": "An array of language objects.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "languages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"name\": \"string\",\n    \"code\": \"string\",\n    \"longCode\": \"string\"\n  },\n  {\n    \"name\": \"string\",\n    \"code\": \"string\",\n    \"longCode\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.languagetoolplus.com/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "90fad991-fbd7-46ba-88de-549cf5d93dce",
+    "name": "LanguageTool Check Languages API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Check texts for style and grammar issues with <a href='https://languagetool.org'>LanguageTool</a>. Please consider the following default limitations:<ul><li>your daily request limit depending on <a href='https://languagetool.org/editor/settings/access-tokens'>your plan</a> <li>maximum number of requests per minute: 20 (free) / 80 (Premium) <li>maximum number of characters per minute: 75,000 (free) / 300,000 (Premium) <li>maximum number of characters per request: 20,000 (free) / 60,000 (Premium) <li>for the free version, also consider the <a href='https://dev.languagetool.org/public-http-api'>limitations documented here</a> <li><b>Note:</b> any parameters or outputs not part of this documentation are internal and must not be relied on</ul> Need more generous limits? Just <a href='https://languagetool.org/proofreading-api'>contact us</a>.",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,325 @@
+{
+  "item": [
+    {
+      "id": "d54a0df3-1bd6-4b2f-9dc0-b7fbd6cdd42d",
+      "name": "Check",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "74fa811b-8646-4fb0-a8ba-72fe18f97674",
+          "name": "Check a text",
+          "request": {
+            "name": "Check a text",
+            "description": {
+              "content": "The main feature - check a text with LanguageTool for possible style and grammar issues.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "check"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "language",
+                  "value": "<string>",
+                  "description": "(Required) A language code like `en-US`, `de-DE`, `fr`, or `auto` to guess the language automatically (see `preferredVariants` below). For languages with variants (English, German, Portuguese) spell checking will only be activated when you specify the variant, e.g. `en-GB` instead of just `en`."
+                },
+                {
+                  "disabled": false,
+                  "key": "text",
+                  "value": "<string>",
+                  "description": "The text to be checked. This or 'data' is required."
+                },
+                {
+                  "disabled": false,
+                  "key": "data",
+                  "value": "<string>",
+                  "description": "The text to be checked, given as a JSON document that specifies what's text and what's markup. This or 'text' is required. Markup will be ignored when looking for errors. Example text: <pre>A &lt;b>test&lt;/b></pre>JSON for the example text: <pre>{\"annotation\":[\n {\"text\": \"A \"},\n {\"markup\": \"&lt;b>\"},\n {\"text\": \"test\"},\n {\"markup\": \"&lt;/b>\"}\n]}</pre> <p>If you have markup that should be interpreted as whitespace, like <tt>&lt;p&gt;</tt> in HTML, you can have it interpreted like this: <pre>{\"markup\": \"&lt;p&gt;\", \"interpretAs\": \"\\n\\n\"}</pre><p>The 'data' feature is not limited to HTML or XML, it can be used for any kind of markup. Entities will need to be expanded in this input."
+                },
+                {
+                  "disabled": false,
+                  "key": "username",
+                  "value": "<string>",
+                  "description": "Set to get Premium API access: Your username/email as used to log in at languagetool.org."
+                },
+                {
+                  "disabled": false,
+                  "key": "apiKey",
+                  "value": "<password>",
+                  "description": "Set to get Premium API access: <a target='_blank' href='https://languagetool.org/editor/settings/access-tokens'>your API key</a>"
+                },
+                {
+                  "disabled": false,
+                  "key": "dicts",
+                  "value": "<string>",
+                  "description": "Comma-separated list of dictionaries to include words from; uses special default dictionary if this is unset"
+                },
+                {
+                  "disabled": false,
+                  "key": "motherTongue",
+                  "value": "<string>",
+                  "description": "A language code of the user's native language, enabling false friends checks for some language pairs."
+                },
+                {
+                  "disabled": false,
+                  "key": "preferredVariants",
+                  "value": "<string>",
+                  "description": "Comma-separated list of preferred language variants. The language detector used with `language=auto` can detect e.g. English, but it cannot decide whether British English or American English is used. Thus this parameter can be used to specify the preferred variants like `en-GB` and `de-AT`. Only available with `language=auto`. You should set variants for at least German and English, as otherwise the spell checking will not work for those, as no spelling dictionary can be selected for just `en` or `de`."
+                },
+                {
+                  "disabled": false,
+                  "key": "enabledRules",
+                  "value": "<string>",
+                  "description": "IDs of rules to be enabled, comma-separated"
+                },
+                {
+                  "disabled": false,
+                  "key": "disabledRules",
+                  "value": "<string>",
+                  "description": "IDs of rules to be disabled, comma-separated"
+                },
+                {
+                  "disabled": false,
+                  "key": "enabledCategories",
+                  "value": "<string>",
+                  "description": "IDs of categories to be enabled, comma-separated"
+                },
+                {
+                  "disabled": false,
+                  "key": "disabledCategories",
+                  "value": "<string>",
+                  "description": "IDs of categories to be disabled, comma-separated"
+                },
+                {
+                  "disabled": false,
+                  "key": "enabledOnly",
+                  "value": "false",
+                  "description": "If true, only the rules and categories whose IDs are specified with `enabledRules` or `enabledCategories` are enabled."
+                },
+                {
+                  "disabled": false,
+                  "key": "level",
+                  "value": "<string>",
+                  "description": "If set to `picky`, additional rules will be activated, i.e. rules that you might only find useful when checking formal text."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "619c16a8-ceea-4833-8130-41e395d283c9",
+              "name": "the result of checking the text",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "check"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) A language code like `en-US`, `de-DE`, `fr`, or `auto` to guess the language automatically (see `preferredVariants` below). For languages with variants (English, German, Portuguese) spell checking will only be activated when you specify the variant, e.g. `en-GB` instead of just `en`.",
+                        "type": "text/plain"
+                      },
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "The text to be checked. This or 'data' is required.",
+                        "type": "text/plain"
+                      },
+                      "key": "text",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "The text to be checked, given as a JSON document that specifies what's text and what's markup. This or 'text' is required. Markup will be ignored when looking for errors. Example text: <pre>A &lt;b>test&lt;/b></pre>JSON for the example text: <pre>{\"annotation\":[\n {\"text\": \"A \"},\n {\"markup\": \"&lt;b>\"},\n {\"text\": \"test\"},\n {\"markup\": \"&lt;/b>\"}\n]}</pre> <p>If you have markup that should be interpreted as whitespace, like <tt>&lt;p&gt;</tt> in HTML, you can have it interpreted like this: <pre>{\"markup\": \"&lt;p&gt;\", \"interpretAs\": \"\\n\\n\"}</pre><p>The 'data' feature is not limited to HTML or XML, it can be used for any kind of markup. Entities will need to be expanded in this input.",
+                        "type": "text/plain"
+                      },
+                      "key": "data",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Set to get Premium API access: Your username/email as used to log in at languagetool.org.",
+                        "type": "text/plain"
+                      },
+                      "key": "username",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Set to get Premium API access: <a target='_blank' href='https://languagetool.org/editor/settings/access-tokens'>your API key</a>",
+                        "type": "text/plain"
+                      },
+                      "key": "apiKey",
+                      "value": "<password>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Comma-separated list of dictionaries to include words from; uses special default dictionary if this is unset",
+                        "type": "text/plain"
+                      },
+                      "key": "dicts",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "A language code of the user's native language, enabling false friends checks for some language pairs.",
+                        "type": "text/plain"
+                      },
+                      "key": "motherTongue",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Comma-separated list of preferred language variants. The language detector used with `language=auto` can detect e.g. English, but it cannot decide whether British English or American English is used. Thus this parameter can be used to specify the preferred variants like `en-GB` and `de-AT`. Only available with `language=auto`. You should set variants for at least German and English, as otherwise the spell checking will not work for those, as no spelling dictionary can be selected for just `en` or `de`.",
+                        "type": "text/plain"
+                      },
+                      "key": "preferredVariants",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "IDs of rules to be enabled, comma-separated",
+                        "type": "text/plain"
+                      },
+                      "key": "enabledRules",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "IDs of rules to be disabled, comma-separated",
+                        "type": "text/plain"
+                      },
+                      "key": "disabledRules",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "IDs of categories to be enabled, comma-separated",
+                        "type": "text/plain"
+                      },
+                      "key": "enabledCategories",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "IDs of categories to be disabled, comma-separated",
+                        "type": "text/plain"
+                      },
+                      "key": "disabledCategories",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "If true, only the rules and categories whose IDs are specified with `enabledRules` or `enabledCategories` are enabled.",
+                        "type": "text/plain"
+                      },
+                      "key": "enabledOnly",
+                      "value": "false"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "If set to `picky`, additional rules will be activated, i.e. rules that you might only find useful when checking formal text.",
+                        "type": "text/plain"
+                      },
+                      "key": "level",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"language\": {\n    \"name\": \"string\",\n    \"code\": \"string\",\n    \"detectedLanguage\": {\n      \"name\": \"string\",\n      \"code\": \"string\"\n    }\n  },\n  \"matches\": [\n    {\n      \"message\": \"string\",\n      \"offset\": 9772,\n      \"length\": 902,\n      \"replacements\": [\n        {\n          \"value\": \"string\"\n        },\n        {\n          \"value\": \"string\"\n        }\n      ],\n      \"context\": {\n        \"text\": \"string\",\n        \"offset\": 6559,\n        \"length\": 3180\n      },\n      \"sentence\": \"string\",\n      \"rule\": {\n        \"id\": \"string\",\n        \"description\": \"string\",\n        \"category\": {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        \"issueType\": \"string\",\n        \"subId\": \"string\",\n        \"urls\": [\n          {\n            \"value\": \"string\"\n          },\n          {\n            \"value\": \"string\"\n          }\n        ]\n      },\n      \"shortMessage\": \"string\"\n    },\n    {\n      \"message\": \"string\",\n      \"offset\": 4359,\n      \"length\": 4221,\n      \"replacements\": [\n        {\n          \"value\": \"string\"\n        },\n        {\n          \"value\": \"string\"\n        }\n      ],\n      \"context\": {\n        \"text\": \"string\",\n        \"offset\": 2859,\n        \"length\": 7073\n      },\n      \"sentence\": \"string\",\n      \"rule\": {\n        \"id\": \"string\",\n        \"description\": \"string\",\n        \"category\": {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        \"issueType\": \"string\",\n        \"subId\": \"string\",\n        \"urls\": [\n          {\n            \"value\": \"string\"\n          },\n          {\n            \"value\": \"string\"\n          }\n        ]\n      },\n      \"shortMessage\": \"string\"\n    }\n  ],\n  \"software\": {\n    \"name\": \"string\",\n    \"version\": \"string\",\n    \"buildDate\": \"string\",\n    \"apiVersion\": 8657,\n    \"premium\": true,\n    \"status\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.languagetoolplus.com/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8df46393-054e-4dda-ab76-53d2430e00a4",
+    "name": "LanguageTool Check API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Check texts for style and grammar issues with <a href='https://languagetool.org'>LanguageTool</a>. Please consider the following default limitations:<ul><li>your daily request limit depending on <a href='https://languagetool.org/editor/settings/access-tokens'>your plan</a> <li>maximum number of requests per minute: 20 (free) / 80 (Premium) <li>maximum number of characters per minute: 75,000 (free) / 300,000 (Premium) <li>maximum number of characters per request: 20,000 (free) / 60,000 (Premium) <li>for the free version, also consider the <a href='https://dev.languagetool.org/public-http-api'>limitations documented here</a> <li><b>Note:</b> any parameters or outputs not part of this documentation are internal and must not be relied on</ul> Need more generous limits? Just <a href='https://languagetool.org/proofreading-api'>contact us</a>.",
+      "type": "text/plain"
+    }
+  }
+}

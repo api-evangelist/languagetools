@@ -1,0 +1,444 @@
+{
+  "item": [
+    {
+      "id": "95770298-0f20-46ad-b825-a247e5c9d192",
+      "name": "Words",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c0159ef7-0cdf-4638-bc5a-9a209124f006",
+          "name": "List words in dictionaries",
+          "request": {
+            "name": "List words in dictionaries",
+            "description": {
+              "content": "List words in the user's personal dictionaries.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "words"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "Offset of where to start in the list of words. Defaults to 0."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "Maximum number of words to return. Defaults to 10."
+                },
+                {
+                  "disabled": false,
+                  "key": "username",
+                  "value": "<string>",
+                  "description": "(Required) Your username as used to log in at languagetool.org."
+                },
+                {
+                  "disabled": false,
+                  "key": "apiKey",
+                  "value": "<password>",
+                  "description": "(Required) <a target='_blank' href='https://languagetool.org/editor/settings/access-tokens'>Your API key</a>"
+                },
+                {
+                  "disabled": false,
+                  "key": "dicts",
+                  "value": "<string>",
+                  "description": "Comma-separated list of dictionaries to include words from; uses special default dictionary if this is unset"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4b83fa27-29e8-4204-9176-1eb8e4faa9fd",
+              "name": "the user's words from the given user dictionaries",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "words"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "username",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "apiKey",
+                      "value": "<password>"
+                    },
+                    {
+                      "key": "dicts",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"words\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f884cdc1-14a9-4ce3-8a5b-148581a9f819",
+          "name": "Add word to a dictionary",
+          "request": {
+            "name": "Add word to a dictionary",
+            "description": {
+              "content": "Add a word to one of the user's personal dictionaries. Please note that this feature is considered to be used for personal dictionaries which must not contain more than 500 words. If this is an issue for you, please contact us.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "words",
+                "add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "word",
+                  "value": "<string>",
+                  "description": "(Required) The word to be added. Must not be a phrase, i.e. cannot contain white space. The word is added to a global dictionary that applies to all languages."
+                },
+                {
+                  "disabled": false,
+                  "key": "username",
+                  "value": "<string>",
+                  "description": "(Required) Your username as used to log in at languagetool.org."
+                },
+                {
+                  "disabled": false,
+                  "key": "apiKey",
+                  "value": "<password>",
+                  "description": "(Required) <a target='_blank' href='https://languagetool.org/editor/settings/access-tokens'>Your API key</a>"
+                },
+                {
+                  "disabled": false,
+                  "key": "dict",
+                  "value": "<string>",
+                  "description": "Name of the dictionary to add the word to; non-existent dictionaries are created after calling this; if unset, adds to special default dictionary"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c8299257-8953-42c9-80e0-981e3eb6250e",
+              "name": "the result of adding the word",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "words",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) The word to be added. Must not be a phrase, i.e. cannot contain white space. The word is added to a global dictionary that applies to all languages.",
+                        "type": "text/plain"
+                      },
+                      "key": "word",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Your username as used to log in at languagetool.org.",
+                        "type": "text/plain"
+                      },
+                      "key": "username",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) <a target='_blank' href='https://languagetool.org/editor/settings/access-tokens'>Your API key</a>",
+                        "type": "text/plain"
+                      },
+                      "key": "apiKey",
+                      "value": "<password>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Name of the dictionary to add the word to; non-existent dictionaries are created after calling this; if unset, adds to special default dictionary",
+                        "type": "text/plain"
+                      },
+                      "key": "dict",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"added\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c827da68-1eb0-4d22-b3ce-fd4ce3b7677f",
+          "name": "Remove word from a dictionary",
+          "request": {
+            "name": "Remove word from a dictionary",
+            "description": {
+              "content": "Remove a word from one of the user's personal dictionaries.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "words",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "word",
+                  "value": "<string>",
+                  "description": "(Required) The word to be removed."
+                },
+                {
+                  "disabled": false,
+                  "key": "username",
+                  "value": "<string>",
+                  "description": "(Required) Your username as used to log in at languagetool.org."
+                },
+                {
+                  "disabled": false,
+                  "key": "apiKey",
+                  "value": "<password>",
+                  "description": "(Required) <a target='_blank' href='https://languagetool.org/editor/settings/access-tokens'>Your API key</a>"
+                },
+                {
+                  "disabled": false,
+                  "key": "dict",
+                  "value": "<string>",
+                  "description": "Name of the dictionary to remove the word from; if the dictionary is empty upon calling this, it is deleted; if unset, removes from special default dictionary"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "67500b95-4a24-4108-998a-be1cc7ee2b93",
+              "name": "the result of removing the word",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "words",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) The word to be removed.",
+                        "type": "text/plain"
+                      },
+                      "key": "word",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Your username as used to log in at languagetool.org.",
+                        "type": "text/plain"
+                      },
+                      "key": "username",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) <a target='_blank' href='https://languagetool.org/editor/settings/access-tokens'>Your API key</a>",
+                        "type": "text/plain"
+                      },
+                      "key": "apiKey",
+                      "value": "<password>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Name of the dictionary to remove the word from; if the dictionary is empty upon calling this, it is deleted; if unset, removes from special default dictionary",
+                        "type": "text/plain"
+                      },
+                      "key": "dict",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"deleted\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.languagetoolplus.com/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "0ff41014-410b-40e1-a4e2-67800f10eeba",
+    "name": "LanguageTool Check Words API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Check texts for style and grammar issues with <a href='https://languagetool.org'>LanguageTool</a>. Please consider the following default limitations:<ul><li>your daily request limit depending on <a href='https://languagetool.org/editor/settings/access-tokens'>your plan</a> <li>maximum number of requests per minute: 20 (free) / 80 (Premium) <li>maximum number of characters per minute: 75,000 (free) / 300,000 (Premium) <li>maximum number of characters per request: 20,000 (free) / 60,000 (Premium) <li>for the free version, also consider the <a href='https://dev.languagetool.org/public-http-api'>limitations documented here</a> <li><b>Note:</b> any parameters or outputs not part of this documentation are internal and must not be relied on</ul> Need more generous limits? Just <a href='https://languagetool.org/proofreading-api'>contact us</a>.",
+      "type": "text/plain"
+    }
+  }
+}

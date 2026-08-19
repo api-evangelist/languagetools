@@ -1,0 +1,83 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "LanguageTool Check Words API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Words",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List words in dictionaries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/words",
+            "params": [
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Offset of where to start in the list of words. Defaults to 0."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of words to return. Defaults to 10."
+              },
+              {
+                "name": "username",
+                "value": "",
+                "type": "query",
+                "description": "Your username as used to log in at languagetool.org."
+              },
+              {
+                "name": "apiKey",
+                "value": "",
+                "type": "query",
+                "description": "<a target='_blank' href='https://languagetool.org/editor/settings/access-tokens'>Your API key</a>"
+              },
+              {
+                "name": "dicts",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of dictionaries to include words from; uses special default dictionary if this is unset"
+              }
+            ]
+          },
+          "docs": "List words in the user's personal dictionaries."
+        },
+        {
+          "info": {
+            "name": "Add word to a dictionary",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/words/add"
+          },
+          "docs": "Add a word to one of the user's personal dictionaries. Please note that this feature is considered to be used for personal dictionaries which must not contain more than 500 words. If this is an issue for you, please contact us."
+        },
+        {
+          "info": {
+            "name": "Remove word from a dictionary",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/words/delete"
+          },
+          "docs": "Remove a word from one of the user's personal dictionaries."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

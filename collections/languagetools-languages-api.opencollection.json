@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "LanguageTool Check Languages API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Languages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a list of supported languages.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/languages"
+          },
+          "docs": "Get a list of supported languages."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
