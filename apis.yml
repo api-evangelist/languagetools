@@ -28,6 +28,15 @@ type: Index
 tags:
   - Grammar
   - Spell Check
+  - Styles
+  - Proofreading
+  - NLP
+  - Natural Language Processing
+  - Writing
+  - Open-Source
+tags_raw:
+  - Grammar
+  - Spell Check
   - Style
   - Proofreading
   - NLP
@@ -53,6 +62,8 @@ apis:
   humanURL: https://languagetool.org/http-api/
   baseURL: https://api.languagetool.org/v2
   tags:
+  - Language
+  tags_raw:
   - Languages
   properties:
   - type: OpenAPI
@@ -65,6 +76,8 @@ apis:
   humanURL: https://languagetool.org/http-api/
   baseURL: https://api.languagetool.org/v2
   tags:
+  - Word
+  tags_raw:
   - Words
   properties:
   - type: OpenAPI
