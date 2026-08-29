@@ -6,6 +6,18 @@ description: >-
   improvements. Used by 100+ companies to enhance software with proofreading
   capabilities via a simple HTTP API returning JSON responses. Hosted on
   GDPR-compliant servers in Germany with no text storage.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
