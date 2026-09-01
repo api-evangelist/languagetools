@@ -88,7 +88,7 @@ apis:
   humanURL: https://languagetool.org/http-api/
   baseURL: https://api.languagetool.org/v2
   tags:
-  - Words
+  - Word
   tags_raw:
   - Words
   properties:
