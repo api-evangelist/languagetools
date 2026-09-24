@@ -1,4 +1,4 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
   contact:
     x-twitter: languagetoolorg
@@ -13,12 +13,8 @@ info:
   - format: swagger
     url: https://languagetool.org/http-api/languagetool-swagger.json
   x-providerName: languagetool.org
-host: api.languagetoolplus.com
-basePath: /v2
-schemes:
-- https
-produces:
-- application/json
+servers:
+- url: https://api.languagetoolplus.com/v2
 tags:
 - name: Languages
 paths:
@@ -27,24 +23,26 @@ paths:
       responses:
         '200':
           description: An array of language objects.
-          schema:
-            items:
-              properties:
-                code:
-                  description: a language code like 'en'
-                  type: string
-                longCode:
-                  description: a language code like 'en-US' or 'ca-ES-valencia'
-                  type: string
-                name:
-                  description: a language name like 'French' or 'English (Australia)'
-                  type: string
-              required:
-              - name
-              - code
-              - longCode
-              type: object
-            type: array
+          content:
+            application/json:
+              schema:
+                items:
+                  properties:
+                    code:
+                      description: a language code like 'en'
+                      type: string
+                    longCode:
+                      description: a language code like 'en-US' or 'ca-ES-valencia'
+                      type: string
+                    name:
+                      description: a language name like 'French' or 'English (Australia)'
+                      type: string
+                  required:
+                  - name
+                  - code
+                  - longCode
+                  type: object
+                type: array
       summary: Get a list of supported languages.
       tags:
       - Languages

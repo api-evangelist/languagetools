@@ -1,4 +1,4 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
   contact:
     x-twitter: languagetoolorg
@@ -13,12 +13,8 @@ info:
   - format: swagger
     url: https://languagetool.org/http-api/languagetool-swagger.json
   x-providerName: languagetool.org
-host: api.languagetoolplus.com
-basePath: /v2
-schemes:
-- https
-produces:
-- application/json
+servers:
+- url: https://api.languagetoolplus.com/v2
 tags:
 - name: Words
 paths:
@@ -29,106 +25,121 @@ paths:
       - description: Offset of where to start in the list of words. Defaults to 0.
         in: query
         name: offset
-        type: integer
+        schema:
+          type: integer
       - description: Maximum number of words to return. Defaults to 10.
         in: query
         name: limit
-        type: integer
+        schema:
+          type: integer
       - description: Your username as used to log in at languagetool.org.
         in: query
         name: username
         required: true
-        type: string
+        schema:
+          type: string
       - description: <a target='_blank' href='https://languagetool.org/editor/settings/access-tokens'>Your API key</a>
-        format: password
         in: query
         name: apiKey
         required: true
-        type: string
+        schema:
+          type: string
+          format: password
       - description: Comma-separated list of dictionaries to include words from; uses special default dictionary if this is unset
         in: query
         name: dicts
-        type: string
+        schema:
+          type: string
       responses:
         '200':
           description: the user's words from the given user dictionaries
-          schema:
-            properties:
-              words:
-                description: array of words
-                items:
-                  type: string
-                type: array
+          content:
+            application/json:
+              schema:
+                properties:
+                  words:
+                    description: array of words
+                    items:
+                      type: string
+                    type: array
       summary: List words in dictionaries
       tags:
       - Words
   /words/add:
     post:
       description: Add a word to one of the user's personal dictionaries. Please note that this feature is considered to be used for personal dictionaries which must not contain more than 500 words. If this is an issue for you, please contact us.
-      parameters:
-      - description: The word to be added. Must not be a phrase, i.e. cannot contain white space. The word is added to a global dictionary that applies to all languages.
-        in: formData
-        name: word
-        required: true
-        type: string
-      - description: Your username as used to log in at languagetool.org.
-        in: formData
-        name: username
-        required: true
-        type: string
-      - description: <a target='_blank' href='https://languagetool.org/editor/settings/access-tokens'>Your API key</a>
-        format: password
-        in: formData
-        name: apiKey
-        required: true
-        type: string
-      - description: Name of the dictionary to add the word to; non-existent dictionaries are created after calling this; if unset, adds to special default dictionary
-        in: formData
-        name: dict
-        type: string
       responses:
         '200':
           description: the result of adding the word
-          schema:
-            properties:
-              added:
-                description: true if the word has been added. false means the word hasn't been added because it had been added before.
-                type: boolean
+          content:
+            application/json:
+              schema:
+                properties:
+                  added:
+                    description: true if the word has been added. false means the word hasn't been added because it had been added before.
+                    type: boolean
       summary: Add word to a dictionary
       tags:
       - Words
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                word:
+                  type: string
+                  description: The word to be added. Must not be a phrase, i.e. cannot contain white space. The word is added to a global dictionary that applies to all languages.
+                username:
+                  type: string
+                  description: Your username as used to log in at languagetool.org.
+                apiKey:
+                  type: string
+                  format: password
+                  description: <a target='_blank' href='https://languagetool.org/editor/settings/access-tokens'>Your API key</a>
+                dict:
+                  type: string
+                  description: Name of the dictionary to add the word to; non-existent dictionaries are created after calling this; if unset, adds to special default dictionary
+              required:
+              - word
+              - username
+              - apiKey
   /words/delete:
     post:
       description: Remove a word from one of the user's personal dictionaries.
-      parameters:
-      - description: The word to be removed.
-        in: formData
-        name: word
-        required: true
-        type: string
-      - description: Your username as used to log in at languagetool.org.
-        in: formData
-        name: username
-        required: true
-        type: string
-      - description: <a target='_blank' href='https://languagetool.org/editor/settings/access-tokens'>Your API key</a>
-        format: password
-        in: formData
-        name: apiKey
-        required: true
-        type: string
-      - description: Name of the dictionary to remove the word from; if the dictionary is empty upon calling this, it is deleted; if unset, removes from special default dictionary
-        in: formData
-        name: dict
-        type: string
       responses:
         '200':
           description: the result of removing the word
-          schema:
-            properties:
-              deleted:
-                description: true if the word has been removed. false means the word hasn't been removed because it was not in the dictionary.
-                type: boolean
+          content:
+            application/json:
+              schema:
+                properties:
+                  deleted:
+                    description: true if the word has been removed. false means the word hasn't been removed because it was not in the dictionary.
+                    type: boolean
       summary: Remove word from a dictionary
       tags:
       - Words
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                word:
+                  type: string
+                  description: The word to be removed.
+                username:
+                  type: string
+                  description: Your username as used to log in at languagetool.org.
+                apiKey:
+                  type: string
+                  format: password
+                  description: <a target='_blank' href='https://languagetool.org/editor/settings/access-tokens'>Your API key</a>
+                dict:
+                  type: string
+                  description: Name of the dictionary to remove the word from; if the dictionary is empty upon calling this, it is deleted; if unset, removes from special default dictionary
+              required:
+              - word
+              - username
+              - apiKey
